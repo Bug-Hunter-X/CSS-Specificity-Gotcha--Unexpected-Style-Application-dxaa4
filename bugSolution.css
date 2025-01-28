@@ -1,0 +1,21 @@
+The solution involves understanding and utilizing the CSS specificity rules to predict and control how different styles are applied.  Here's a revised CSS file which clarifies the intended styling. The most specific selector will always be applied.
+
+```css
+/*Improved CSS with comments to clarify the rules and their specificity*/
+.container {
+  background-color: lightblue; /* Low specificity */
+}
+
+#my-element {
+  background-color: lightgreen; /* Medium specificity */
+}
+
+.container #my-element {
+  background-color: lightcoral; /* Higher specificity */
+}
+
+.container #my-element.special {
+  background-color: yellow; /* Highest specificity */
+}
+```
+By ensuring that the selectors are written in a way that reflects the desired order of precedence, one can avoid the unexpected behavior demonstrated in the original CSS code.
