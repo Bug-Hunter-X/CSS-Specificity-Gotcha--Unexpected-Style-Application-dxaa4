@@ -1,0 +1,22 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors and the cascading order.
+
+```css
+.container {
+  background-color: lightblue;
+}
+
+#my-element {
+  background-color: lightgreen;
+}
+
+.container #my-element {
+  background-color: lightcoral; 
+}
+
+/*The following rule will override the others in terms of specificity*/
+.container #my-element.special {
+  background-color: yellow;
+}
+```
+
+The issue arises when you have multiple rules targeting the same element, especially when classes and IDs are involved.  The selector `.container #my-element` is more specific than `.container` and `#my-element` alone due to the use of both a class and an ID.  However, adding another class such as `.special` will further increase specificity. Understanding how specificity works in CSS is key to avoiding unexpected behavior. 
